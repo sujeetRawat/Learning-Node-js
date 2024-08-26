@@ -28,11 +28,11 @@ const requestHandler = (req,res) => {
         const body =[];
 
         req.on('data',(chunk) => {
-          //  console.log(chunk);
+           console.log(chunk);
             body.push(chunk);
         });
 
-        req.on('end', () => {
+         req.on('end', () => {
             const parsedBody= Buffer.concat(body).toString();
            // console.log(parsedBody);
             const message = parsedBody.split('=')[1];
